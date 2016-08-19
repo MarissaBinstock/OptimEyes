@@ -10,12 +10,16 @@
     "moment": "^2.14.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.11.1",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.2",
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.0",
     "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.0.4"
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "sass": "^0.5.0"
   },
   "author": "mandiwise",
   "license": "ISC"

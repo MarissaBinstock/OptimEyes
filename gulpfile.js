@@ -3,6 +3,9 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
     browserSync = require('browser-sync');
 
 var plumberErrorHandler = {
@@ -13,18 +16,25 @@ var plumberErrorHandler = {
 };
 
 gulp.task('sass', function() {
-   gulp.src('./sass/*.scss')
+   gulp.src('./sass/**/*.scss')
       .pipe(plumber(plumberErrorHandler))
       .pipe(sass())
       .pipe(autoprefixer({
          browsers: ['last 2 versions']
       }))
-      .pipe(gulp.dest('./build/css'))
+      .pipe(uglify()) 
+      // .pipe(rename({extname:".min.css"}))
+      .pipe(gulp.dest('./build/t/'))
+      console.log("worked")
 });
 
+
 gulp.task('scripts', function(){
-    gulp.src('./js/*.js')
-      .pipe(gulp.dest('./build/js'))
+    gulp.src('./js/**/*.js')
+    .pipe(uglify()) 
+    .pipe(rename({extname:".min.js"}))
+    .pipe(gulp.dest('./build/js'))
+
 });
 
 gulp.task('browser-sync', function() {
